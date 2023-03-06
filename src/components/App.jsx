@@ -1,4 +1,7 @@
-import TrendingMovies from './TrendingMovies/TrendingMovies';
+import { lazy } from 'react';
+
+const TrendingMovies = lazy(() => import('./TrendingMovies/TrendingMovies'));
+
 export const App = () => {
   return (
     <div

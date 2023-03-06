@@ -58,8 +58,8 @@ console.log(getMovieReviews('438631'));
 
 export {
   getTrendingMovies,
-  getMovieDetails,
   getMoviesBySearchQuery,
+  getMovieDetails,
   getMovieCredits,
   getMovieReviews,
 };
