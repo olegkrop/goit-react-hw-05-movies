@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 
 const TrendingMovies = lazy(() => import('./TrendingMovies/TrendingMovies'));
+const MovieReviews = lazy(() => import('./MovieReviews/MovieReviews'));
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
       }}
     >
       <TrendingMovies />
+      <MovieReviews />
     </div>
   );
 };
