@@ -1,0 +1,26 @@
+.container {
+    margin-top: 30px;
+}
+
+.list {
+    margin: 0;
+}
+
+.item {
+    list-style-type: none;
+}
+
+.actor__image {
+    width: 100px;
+    height: auto;
+}
+
+.actor__text {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.character__text {
+    margin-top: 5px;
+    margin-bottom: 35px;
+}

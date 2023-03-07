@@ -2,6 +2,7 @@ import { lazy } from 'react';
 
 const TrendingMovies = lazy(() => import('./TrendingMovies/TrendingMovies'));
 const MovieReviews = lazy(() => import('./MovieReviews/MovieReviews'));
+const MovieCast = lazy(() => import('./MovieCast/MovieCast'));
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
     >
       <TrendingMovies />
       <MovieReviews />
+      <MovieCast />
     </div>
   );
 };
