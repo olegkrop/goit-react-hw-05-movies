@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { getMoviesBySearchQuery } from 'api';
 import style from './SearchMovies.module.css';
 
@@ -7,6 +7,7 @@ const SearchMovies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
+  const location = useLocation();
 
   useEffect(() => {
     if (!searchQuery) {
@@ -19,17 +20,18 @@ const SearchMovies = () => {
     fetchMovies();
   }, [searchQuery]);
 
-  const handleInputSubmit = async event => {
-    event.preventDefault();
+  const handleInputSubmit = async e => {
+    e.preventDefault();
 
-    const form = event.currentTarget;
+    const form = e.currentTarget;
     setSearchParams({ query: form.elements.searchMovie.value });
     form.reset();
   };
 
   return (
     <div className={style.container}>
-      <form className={style.form} onSubmit={handleInputSubmit}>
+      <form className={style.SearchForm} onSubmit={handleInputSubmit}>
+        Search a movie
         <input
           className="SearchForm__input"
           name="searchMovie"
@@ -45,10 +47,14 @@ const SearchMovies = () => {
       <ul className={style.list}>
         {movies.map(movie => {
           return (
-            <li key={movie.id} className={style.trendingMovies__item}>
-              to={`${movie.id}`}
-              className={style.trendingMovies__name}
-              {movie.title}
+            <li key={movie.id} className={style.item}>
+              <Link
+                to={`${movie.id}`}
+                className={style.name}
+                state={{ from: `${location.pathname}${location.search}` }}
+              >
+                {movie.title}
+              </Link>
             </li>
           );
         })}

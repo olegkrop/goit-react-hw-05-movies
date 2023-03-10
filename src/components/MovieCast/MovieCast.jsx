@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'api';
 import style from './MovieCast.module.css';
 
-const IMAGE_PLACEHOLDER = '';
+const IMAGE_PLACEHOLDER =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/694px-Unknown_person.jpg';
 
 const MovieCast = () => {
   const { movieId } = useParams();
