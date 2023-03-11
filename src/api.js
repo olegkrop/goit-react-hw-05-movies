@@ -8,8 +8,6 @@ const getTrendingMovies = async () => {
   return result.data.results;
 };
 
-console.log(getTrendingMovies());
-
 const getMoviesBySearchQuery = async searchQuery => {
   if (!searchQuery) {
     return [];
@@ -20,8 +18,6 @@ const getMoviesBySearchQuery = async searchQuery => {
   return result.data.results;
 };
 
-console.log(getMoviesBySearchQuery('Dune'));
-
 const getMovieDetails = async movieId => {
   if (!movieId) {
     return null;
@@ -29,8 +25,6 @@ const getMovieDetails = async movieId => {
   const result = await axios.get(`${URL}/movie/${movieId}?api_key=${KEY}`);
   return result.data;
 };
-
-console.log(getMovieDetails('438631'));
 
 const getMovieCredits = async movieId => {
   if (!movieId) {
@@ -42,8 +36,6 @@ const getMovieCredits = async movieId => {
   return result.data.cast;
 };
 
-console.log(getMovieCredits('438631'));
-
 const getMovieReviews = async movieId => {
   if (!movieId) {
     return null;
@@ -53,8 +45,6 @@ const getMovieReviews = async movieId => {
   );
   return result.data.results;
 };
-
-console.log(getMovieReviews('438631'));
 
 export {
   getTrendingMovies,
