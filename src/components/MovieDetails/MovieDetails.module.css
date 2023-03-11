@@ -31,7 +31,8 @@
 }
 
 .movie__poster {
-    height: 400px;
+    width: 300px;
+    height: auto;
 }
 
 

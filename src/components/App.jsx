@@ -18,7 +18,7 @@ const StyledLink = styled(NavLink)`
   color: black;
   display: block;
   margin-right: 15px;
-
+  font-weight: 700;
   &.active {
     color: red;
   }
@@ -26,22 +26,24 @@ const StyledLink = styled(NavLink)`
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
-        <nav>
-          <StyledLink to="/">Home</StyledLink>
-          <StyledLink to="/movies">Movies</StyledLink>
-        </nav>
-        <Routes>
-          <Route path="/" element={<TrendingMovies />} />
-          <Route path="/movies" element={<SearchMovies />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<MovieReviews />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <div className="container">
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <nav>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/movies">Movies</StyledLink>
+          </nav>
+          <Routes>
+            <Route path="/" element={<TrendingMovies />} />
+            <Route path="/movies" element={<SearchMovies />} />
+            <Route path="/movies/:movieId" element={<MovieDetails />}>
+              <Route path="cast" element={<MovieCast />} />
+              <Route path="reviews" element={<MovieReviews />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </div>
   );
 };

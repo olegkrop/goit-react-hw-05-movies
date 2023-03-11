@@ -30,10 +30,8 @@ const SearchMovies = () => {
 
   return (
     <div className={style.container}>
-      <form className={style.SearchForm} onSubmit={handleInputSubmit}>
-        Search a movie
+      <form onSubmit={handleInputSubmit}>
         <input
-          className="SearchForm__input"
           name="searchMovie"
           type="text"
           autoComplete="off"
