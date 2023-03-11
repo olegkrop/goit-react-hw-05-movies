@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/392.f2da0756.chunk.css","mappings":"AAAA,0BACI,gBACJ","sources":["components/SearchMovies/SearchMovies.module.css"],"sourcesContent":[".form {\n    padding-top: 20px;\n}\n\n.container {}\n\n.button {}\n\n.list {}"],"names":[],"sourceRoot":""}
